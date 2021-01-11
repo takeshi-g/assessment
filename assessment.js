@@ -78,6 +78,7 @@ const answers = [
  * @param {string} userName ユーザーの名前
  * @return {string} 診断結果
  */
+
 function assessment(userName) {
   // 全文字のコード番号を取得してそれを足し合わせる
   let sumOfcharCode = 0;

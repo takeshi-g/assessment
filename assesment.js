@@ -19,14 +19,26 @@ assessmentButton.onclick = () => {
   console.log("clicked");
   const userName = userNameInput.value;
   if (userName.length === 0) return;
+
   resultDivided.innerText = "";
-  const header = document.createElement("h3");
-  header.innerText = "診断結果";
-  resultDivided.append(header);
+  resultDivided.classList.add("card");
+  resultDivided.style.maxWidth = "700px";
+
+  const headerDivided = document.createElement("div");
+  headerDivided.classList.add("card-header");
+  headerDivided.innerText = "診断結果";
+
+  const bodyDevided = document.createElement("div");
+  bodyDevided.classList.add("card-body");
+
   const paragraph = document.createElement("p");
+  paragraph.classList.add("card-text");
   const result = assesment(userName);
   paragraph.append(result);
-  resultDivided.append(paragraph);
+  bodyDevided.append(paragraph);
+
+  resultDivided.appendChild(headerDivided);
+  resultDivided.appendChild(bodyDevided);
 
   tweetDivided.innerText = "";
   const anchor = document.createElement("a");
